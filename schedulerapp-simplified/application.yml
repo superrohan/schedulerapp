@@ -1,0 +1,89 @@
+spring:
+  application:
+    name: schedulerapp
+
+  # OAuth2 Client Configuration for Client Credentials Flow
+  security:
+    oauth2:
+      client:
+        registration:
+          controllerapp-client:
+            client-id: ${ENTRA_CLIENT_ID:your-client-id-here}
+            client-secret: ${ENTRA_CLIENT_SECRET:your-client-secret-here}
+            authorization-grant-type: client_credentials
+            scope: api://controller-app/.default
+            client-name: SchedulerApp Service Client
+        
+        provider:
+          controllerapp-client:
+            token-uri: ${ENTRA_TOKEN_URI:https://login.microsoftonline.com/your-tenant-id/oauth2/v2.0/token}
+
+# ControllerApp Configuration
+controllerapp:
+  base-url: ${CONTROLLER_APP_BASE_URL:http://localhost:8080}
+  timeout:
+    connect: 10000
+    read: 30000
+
+# Scheduling Configuration
+scheduling:
+  enabled: ${SCHEDULING_ENABLED:true}
+
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    com.ubs.bigid.schedulerapp: DEBUG
+    org.springframework.security.oauth2: DEBUG
+    org.springframework.web.client: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] [%X{correlationId}] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] [%X{correlationId}] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/schedulerapp.log
+    max-size: 10MB
+    max-history: 30
+
+# Service Audit Logger
+  loggers:
+    SERVICE_AUDIT:
+      name: SERVICE_AUDIT
+      level: INFO
+      additivity: false
+      appender-ref:
+        - ref: AUDIT_FILE
+    
+# Management endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when-authorized
+
+---
+# Development Profile
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+logging:
+  level:
+    com.ubs.bigid.schedulerapp: DEBUG
+    org.springframework.security.oauth2: TRACE
+
+---
+# Production Profile
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+logging:
+  level:
+    root: WARN
+    com.ubs.bigid.schedulerapp: INFO
+    org.springframework.security.oauth2: INFO
