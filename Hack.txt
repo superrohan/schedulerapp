@@ -1,0 +1,68 @@
+Act as a Product Manager at UBS preparing a hackathon pitch for senior leadership.
+
+Create a professional PowerPoint presentation with a maximum of 5 slides for the following idea:
+
+IDEA:
+An AI-powered Personal Productivity Tracker Board for UBS employees (similar to GitLab Issue Boards) that integrates directly with GitLab to track, prioritize, and improve individual delivery productivity.
+
+This solution acts as a smart personal Kanban board that allows employees to manage their GitLab issues and daily work using AI-driven prioritization and accessibility modes.
+
+Core Features:
+- Individual Productivity Tracking Dashboard
+- GitLab Issue Import & Sync
+- GitLab Wiki Sync
+- AI Task Assistant (users can ask AI about any issue/task)
+- AI-based Task Prioritization Engine
+- MCP Integration for contextual productivity recommendations
+- Voice-based Task Creation & Navigation
+- Work Modes:
+    • Normal Mode
+    • Focus Mode
+    • ADHD Mode (Adaptive Cognitive Support Mode)
+
+Structure the presentation as follows:
+
+Slide 1 – Problem Statement
+Explain the challenges UBS employees face in managing multiple GitLab issues, context switching, unclear task prioritization, and productivity tracking.
+
+Slide 2 – Proposed Solution
+Explain the AI-powered Personal Tracker Board and how it integrates with GitLab to provide a unified personal productivity management system.
+
+Slide 3 – Key Features
+Highlight:
+GitLab Issue Sync  
+AI Task Q&A  
+AI Priority Suggestion  
+Voice Input  
+Wiki Sync  
+Focus Mode  
+ADHD Mode (Adaptive Task Simplification)
+
+Slide 4 – ADHD Mode (Innovation Highlight)
+Explain how ADHD Mode improves productivity through:
+- Task Chunking (breaking issues into smaller steps)
+- Time-boxed Work Suggestions
+- Visual Simplicity Mode
+- AI Nudges for Task Continuity
+- Reduced Cognitive Load UI
+- Distraction Blocking Recommendations
+
+Slide 5 – Business Impact & Implementation
+Highlight:
+Improved individual delivery efficiency  
+Reduced task completion time  
+Better sprint planning at individual level  
+Enhanced employee productivity tracking  
+Alignment with UBS Digital Productivity & Inclusion goals  
+High-level feasibility via GitLab APIs + AI layer integration
+
+Make the content:
+- Concise
+- Enterprise-ready
+- Jury-focused
+- Outcome-driven
+- Suitable for executive-level presentation
+
+Avoid long paragraphs.
+Use bullet points with measurable impact language.
+Provide slide titles and bullet point content for each slide.
